@@ -1,0 +1,9 @@
+{
+  "name": "PLANET PRO — AI Football Predictions",
+  "short_name": "PLANET PRO",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#06170f",
+  "theme_color": "#071b12",
+  "description": "Générateur mobile de vidéos de pronostics football."
+}
