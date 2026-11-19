@@ -5,37 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#071b12">
 <link rel="manifest" href="./manifest.webmanifest">
-<title>PLANET PRO — AI Football Predictions</title>
+<title>PLANET PRO V2 — AI Football Predictions</title>
 <style>
 :root{--bg:#06170f;--panel:#0c2418;--panel2:#102d1e;--lime:#c8ff00;--lime2:#a9e600;--white:#f5f8ef;--muted:#a5b5a7;--line:#284a35;--danger:#ff6b6b}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0%,#153b25 0,#06170f 42%);color:var(--white);font-family:Inter,system-ui,Arial,sans-serif}
-header{padding:18px 16px 12px;position:sticky;top:0;background:#06170fee;backdrop-filter:blur(12px);z-index:5;border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:10px}.mark{width:42px;height:42px;border-radius:13px;background:var(--lime);color:#08150c;display:grid;place-items:center;font-size:22px;font-weight:1000}.brand h1{font-size:19px;margin:0;letter-spacing:.5px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:2px}
-main{max-width:900px;margin:auto;padding:16px;display:grid;gap:14px}.card{background:linear-gradient(145deg,#102b1d,#091d13);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 10px 30px #0003}.card h2{font-size:16px;margin:0 0 14px;display:flex;align-items:center;gap:8px}.num{background:var(--lime);color:#08150c;border-radius:8px;padding:3px 7px;font-weight:900;font-size:12px}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 20% 0%,#153b25 0,#06170f 42%);color:var(--white);font-family:Inter,system-ui,Arial,sans-serif}
+header{padding:16px;position:sticky;top:0;background:#06170fee;backdrop-filter:blur(12px);z-index:5;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px}.mark{width:42px;height:42px;border-radius:13px;background:var(--lime);color:#08150c;display:grid;place-items:center;font-size:22px;font-weight:1000;box-shadow:0 0 22px #c8ff0040}.brand h1{font-size:19px;margin:0;letter-spacing:.5px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;margin-top:2px}
+main{max-width:960px;margin:auto;padding:16px;display:grid;gap:14px}.card{background:linear-gradient(145deg,#102b1d,#091d13);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 10px 30px #0003}.card h2{font-size:16px;margin:0 0 14px;display:flex;align-items:center;gap:8px}.num{background:var(--lime);color:#08150c;border-radius:8px;padding:3px 7px;font-weight:900;font-size:12px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}.field label{font-size:12px;color:var(--muted);font-weight:700}.field input,.field select{width:100%;min-width:0;background:#06170f;border:1px solid var(--line);border-radius:10px;padding:12px;color:white;font-size:14px;outline:none}.field input:focus{border-color:var(--lime)}
-.teams{display:grid;grid-template-columns:1fr 1fr;gap:12px}.team{background:#071a10;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}.crest{width:64px;height:64px;border-radius:50%;margin:0 auto 9px;background:#183b26;border:2px solid var(--lime);display:grid;place-items:center;font-size:24px;font-weight:900;overflow:hidden}.crest img{width:100%;height:100%;object-fit:contain;background:white}.team input[type=text]{text-align:center;background:transparent;border:0;border-bottom:1px solid var(--line);width:100%;color:white;padding:8px;font-weight:800;font-size:14px}.team input[type=file]{font-size:10px;width:100%;margin-top:8px;color:var(--muted)}
-.predictions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.prediction{display:flex;align-items:center;gap:8px;background:#071a10;border:1px solid var(--line);border-radius:12px;padding:9px}.ai{width:32px;height:32px;border-radius:9px;background:var(--lime);color:#07150c;display:grid;place-items:center;font-size:11px;font-weight:1000;flex-shrink:0}.prediction input{width:42px;background:#102b1d;border:1px solid #31543c;border-radius:7px;color:white;padding:8px;text-align:center;font-weight:900;font-size:16px}.prediction .dash{color:var(--muted);font-weight:900}.prediction .ai-name{min-width:0;flex:1;background:transparent;border:0;border-bottom:1px solid #31543c;color:#dce9dc;padding:6px 2px;font-size:11px}
+.teams{display:grid;grid-template-columns:1fr 1fr;gap:12px}.team{min-width:0;background:#071a10;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center;display:flex;flex-direction:column;align-items:center}.crest{width:64px;height:64px;flex:0 0 64px;border-radius:50%;margin:0 auto 9px;background:#183b26;border:2px solid var(--lime);display:grid;place-items:center;font-size:22px;font-weight:900;overflow:hidden}.crest img{width:100%;height:100%;object-fit:contain;background:white}.team input[type=text]{display:block;text-align:center;background:transparent;border:0;border-bottom:1px solid var(--line);width:100%;min-width:0;color:white;padding:8px 2px;font-weight:800;font-size:clamp(11px,3.4vw,14px);line-height:1.25;overflow-wrap:anywhere}.team input[type=file]{font-size:10px;width:100%;max-width:100%;margin-top:8px;color:var(--muted)}
+.predictions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.prediction{display:flex;align-items:center;gap:8px;min-width:0;background:#071a10;border:1px solid var(--line);border-radius:12px;padding:9px}.ai{width:32px;height:32px;border-radius:9px;background:var(--lime);color:#07150c;display:grid;place-items:center;font-size:11px;font-weight:1000;flex-shrink:0}.prediction input{width:42px;min-width:0;background:#102b1d;border:1px solid #31543c;border-radius:7px;color:white;padding:8px 3px;text-align:center;font-weight:900;font-size:16px}.prediction .dash{color:var(--muted);font-weight:900}.prediction .ai-name{min-width:0;flex:1;background:transparent;border:0;border-bottom:1px solid #31543c;color:#dce9dc;padding:6px 2px;font-size:11px}
 .actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:13px 16px;font-weight:900;font-size:13px;cursor:pointer}.primary{background:var(--lime);color:#08150c;flex:1}.secondary{background:#173a26;color:white;border:1px solid #31543c}.btn:disabled{opacity:.45;cursor:not-allowed}.hint{font-size:11px;color:var(--muted);line-height:1.5;margin:10px 0 0}.status{padding:10px 12px;background:#071a10;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:12px;margin-top:10px}
-.preview-wrap{background:#020905;border-radius:15px;padding:10px;text-align:center}.preview-wrap canvas{width:min(100%,360px);height:auto;border-radius:8px;background:#0b2417;display:block;margin:auto}.result{display:flex;justify-content:space-between;align-items:center;background:#071a10;border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0}.result strong{font-size:28px;color:var(--lime)}.result small{display:block;color:var(--muted);font-size:11px}.bar{height:8px;border-radius:9px;background:#294333;overflow:hidden;margin-top:7px}.bar span{height:100%;display:block;background:var(--lime);width:0}
+.preview-wrap{background:#020905;border-radius:15px;padding:10px;text-align:center}.preview-wrap canvas{width:min(100%,360px);height:auto;border-radius:8px;background:#0b2417;display:block;margin:auto}.result{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#071a10;border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0}.result strong{font-size:28px;color:var(--lime)}.result small{display:block;color:var(--muted);font-size:11px}.bar{height:8px;border-radius:9px;background:#294333;overflow:hidden;margin-top:7px}.bar span{height:100%;display:block;background:var(--lime);width:0;transition:width .35s ease}
 footer{text-align:center;color:#6f8c76;font-size:10px;padding:12px 10px 28px}
-@media(min-width:720px){main{grid-template-columns:1fr 1fr}.wide{grid-column:1/-1}.predictions{grid-template-columns:1fr 1fr}}
-@media(max-width:390px){.predictions{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.teams{gap:8px}}
+@media(min-width:720px){main{grid-template-columns:1fr 1fr}.wide{grid-column:1/-1}}
+@media(max-width:430px){main{padding:11px}.card{padding:13px}.predictions{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.teams{gap:8px}.team{padding:9px}.crest{width:56px;height:56px;flex-basis:56px}.result strong{font-size:23px}}
 </style>
 </head>
 <body>
-<header><div class="brand"><div class="mark">PP</div><div><h1>PLANET PRO</h1><small>AI FOOTBALL PREDICTIONS · V1.0</small></div></div></header>
+<header><div class="brand"><div class="mark">PP</div><div><h1>PLANET PRO</h1><small>AI FOOTBALL PREDICTIONS · V2.0</small></div></div></header>
 <main>
 <section class="card">
 <h2><span class="num">01</span> Informations du match</h2>
 <div class="grid">
-<div class="field"><label>Championnat</label><input id="league" value="PREMIER LEAGUE" placeholder="Ex. Premier League"></div>
-<div class="field"><label>Date / heure</label><input id="kickoff" placeholder="SAM 15:00 UK"></div>
+<div class="field"><label for="league">Championnat</label><input id="league" value="PREMIER LEAGUE" placeholder="Ex. Premier League"></div>
+<div class="field"><label for="kickoff">Date / heure</label><input id="kickoff" placeholder="SAM 15:00 UK"></div>
 </div>
 <div class="teams">
 <div class="team"><div class="crest" id="homeCrest">A</div><input id="home" type="text" value="ARSENAL" aria-label="Équipe domicile"><input id="homeLogo" type="file" accept="image/*" aria-label="Logo domicile"></div>
 <div class="team"><div class="crest" id="awayCrest">B</div><input id="away" type="text" value="CHELSEA" aria-label="Équipe extérieure"><input id="awayLogo" type="file" accept="image/*" aria-label="Logo extérieur"></div>
 </div>
-<p class="hint">Les logos sont facultatifs. Tu peux importer les images depuis la galerie de ton téléphone.</p>
+<p class="hint">Les logos sont facultatifs. Les noms longs s'adaptent automatiquement dans la vidéo.</p>
 </section>
 
 <section class="card">
@@ -54,78 +55,152 @@ footer{text-align:center;color:#6f8c76;font-size:10px;padding:12px 10px 28px}
 
 <section class="card wide">
 <h2><span class="num">04</span> Prévisualisation et vidéo</h2>
-<div class="preview-wrap"><canvas id="stage" width="540" height="960"></canvas></div>
+<div class="preview-wrap"><canvas id="stage" width="1080" height="1920"></canvas></div>
 <div class="actions" style="margin-top:12px">
 <button class="btn secondary" id="preview">▶ Prévisualiser</button>
 <button class="btn primary" id="export">Générer la vidéo</button>
 </div>
 <div class="status" id="status">Prêt. Complète les informations du match et les 10 pronostics.</div>
-<p class="hint">La vidéo dure environ 20 secondes. L'export utilise MediaRecorder. Selon le navigateur Android, le fichier sera en WebM ou MP4. Garde cette page ouverte pendant le rendu.</p>
-<a id="download" style="display:none;color:var(--lime);font-weight:800;margin-top:12px;display:none">Télécharger la vidéo</a>
+<p class="hint">Vidéo verticale 1080 × 1920, 30 images/s, environ 20 secondes. Le format MP4 dépend de la prise en charge réelle du navigateur ; sinon, un fichier WebM sera proposé sans fausse conversion.</p>
+<a id="download" style="display:none;color:var(--lime);font-weight:800;margin-top:12px">Télécharger la vidéo</a>
 </section>
 </main>
-<footer>PLANET PRO · Football data visualization · V1.0<br>Les scores affichés sont des pronostics, pas des résultats garantis.</footer>
+<footer>PLANET PRO · Football data visualization · V2.0<br>Les scores affichés sont des pronostics, pas des résultats garantis.</footer>
 <script>
+'use strict';
 const $=id=>document.getElementById(id);
 const predBox=$('predictions');
+const defaultHome=[2,2,1,2,1,2,3,1,2,2], defaultAway=[1,1,1,0,0,2,1,2,1,1];
 for(let i=1;i<=10;i++){
  const row=document.createElement('div');row.className='prediction';
- row.innerHTML=`<div class="ai">${i}</div><input class="ai-name" aria-label="Nom du prédicteur ${i}" value="AI ${i}"><input class="score-home" aria-label="Buts domicile ${i}" type="number" min="0" max="20" value="${i===1?2:i===2?2:i===3?1:i===4?2:i===5?1:i===6?2:i===7?3:i===8?1:i===9?2:2}"><span class="dash">–</span><input class="score-away" aria-label="Buts extérieur ${i}" type="number" min="0" max="20" value="${i===1?1:i===2?1:i===3?1:i===4?0:i===5?0:i===6?2:i===7?1:i===8?2:i===9?1:1}">`;
+ row.innerHTML=`<div class="ai">${i}</div><input class="ai-name" aria-label="Nom du prédicteur ${i}" value="AI ${i}"><input class="score-home" aria-label="Buts domicile ${i}" type="number" min="0" max="20" value="${defaultHome[i-1]}"><span class="dash">–</span><input class="score-away" aria-label="Buts extérieur ${i}" type="number" min="0" max="20" value="${defaultAway[i-1]}">`;
  predBox.appendChild(row);
 }
-let logos={home:null,away:null},animFrame=null,recording=false;
-function readLogo(input,key,box){input.addEventListener('change',()=>{const f=input.files&&input.files[0];if(!f)return;const url=URL.createObjectURL(f);const img=new Image();img.onload=()=>{logos[key]=img;box.innerHTML='';box.appendChild(img);};img.src=url;});}
-readLogo($('homeLogo'),'home',$('homeCrest'));readLogo($('awayLogo'),'away',$('awayCrest'));
-function getPreds(){return [...document.querySelectorAll('.prediction')].map(r=>({name:r.querySelector('.ai-name').value||'AI',h:Math.max(0,Math.min(20,parseInt(r.querySelector('.score-home').value)||0)),a:Math.max(0,Math.min(20,parseInt(r.querySelector('.score-away').value)||0))}));}
-function compute(){const p=getPreds(),counts={};p.forEach(x=>{const k=x.h+'-'+x.a;counts[k]=(counts[k]||0)+1;});const sorted=Object.entries(counts).sort((a,b)=>b[1]-a[1]);const [score,count]=sorted[0];const [h,a]=score.split('-');$('consensus').textContent=h+' – '+a;$('agreement').textContent=count+'/10';$('agreementBar').style.width=(count*10)+'%';$('distribution').textContent='Répartition : '+sorted.map(([s,n])=>s.replace('-', '–')+' ('+n+')').join(' · ');return {p,h:+h,a:+a,count,counts};}
-$('calculate').onclick=compute;
-$('reset').onclick=()=>{document.querySelectorAll('.score-home').forEach((x,i)=>x.value=[2,2,1,2,1,2,3,1,2,2][i]);document.querySelectorAll('.score-away').forEach((x,i)=>x.value=[1,1,1,0,0,2,1,2,1,1][i]);compute();draw(0,compute());$('status').textContent='Pronostics réinitialisés.';};
-const c=$('stage'),ctx=c.getContext('2d');const W=c.width,H=c.height;
-function rounded(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
-function text(t,x,y,size,color,weight='700',align='center'){ctx.fillStyle=color;ctx.font=`${weight} ${size}px Arial`;ctx.textAlign=align;ctx.fillText(t,x,y);}
-function draw(t,data){
- const p=data||compute(),progress=Math.min(1,t/20),lime='#c8ff00',white='#f4f8ed';
- const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#eaf6d9');g.addColorStop(1,'#c9e5b2');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
- // pitch lines
- ctx.strokeStyle='#6b9a72';ctx.globalAlpha=.34;ctx.lineWidth=4;ctx.strokeRect(35,45,W-70,H-90);ctx.strokeRect(135,45,W-270,150);ctx.strokeRect(135,H-195,W-270,150);ctx.beginPath();ctx.moveTo(35,H/2);ctx.lineTo(W-35,H/2);ctx.stroke();ctx.beginPath();ctx.arc(W/2,H/2,100,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=1;
- rounded(160,48,220,58,12,'#ffffffcc');text('PLANET PRO',270,86,27,'#102418','900');
- text(($('league').value||'FOOTBALL').toUpperCase(),270,150,18,'#425d47','800');
- text(($('kickoff').value||'MATCH PREDICTION').toUpperCase(),270,180,14,'#526c56','700');
- // team names / crests
- rounded(45,220,450,115,18,'#ffffffd9');
- if(logos.home){ctx.drawImage(logos.home,75,238,75,75);}else{rounded(78,238,75,75,38,lime);text(($('home').value||'A').slice(0,2).toUpperCase(),115,285,25,'#102418','900');}
- if(logos.away){ctx.drawImage(logos.away,390,238,75,75);}else{rounded(387,238,75,75,38,lime);text(($('away').value||'B').slice(0,2).toUpperCase(),424,285,25,'#102418','900');}
- text(($('home').value||'HOME').toUpperCase().slice(0,17),165,275,18,'#132b1b','900','left');text(($('away').value||'AWAY').toUpperCase().slice(0,17),375,275,18,'#132b1b','900','right');
- // center score
- const reveal=Math.max(0,Math.min(1,(t-2)/4));rounded(115,370,310,125,24,lime);text(p.h+' – '+p.a,270,455,86,'#07150c','900');
- text('SCORE MAJORITAIRE',270,535,18,'#31533a','900');
- // AI tiles reveal sequentially
- const visible=Math.min(10,Math.floor(Math.max(0,t-5)/1.05)+1);
- const startY=580; p.p.forEach((v,i)=>{const col=i%5,row=Math.floor(i/5),x=45+col*92,y=startY+row*115;const shown=i<visible;ctx.globalAlpha=shown?1:.22;rounded(x,y,78,88,12,shown?'#fafff2':'#dce9d4');rounded(x+18,y+8,42,30,8,lime);text(String(i+1),x+39,y+30,17,'#102418','900');text(v.h+'–'+v.a,x+39,y+61,19,'#132b1b','900');text((v.name||'AI').slice(0,10),x+39,y+78,9,'#526c56','700');ctx.globalAlpha=1;});
- // counter
- rounded(115,840,310,62,16,'#ffffffdd');text(Math.min(10,visible)+'/10 · PRÉDICTIONS',270,879,23,'#142d1c','900');
- // progress line
- rounded(90,925,360,9,5,'#93b58d');rounded(90,925,360*progress,9,5,lime);
- text('PLANET PRO · ANALYSE DES PRONOSTICS',270,950,10,'#365a3d','700');
+let logos={home:null,away:null},logoUrls={home:null,away:null},animFrame=null,recording=false;
+function readLogo(input,key,box){
+ input.addEventListener('change',()=>{
+  const f=input.files&&input.files[0];if(!f)return;
+  if(logoUrls[key])URL.revokeObjectURL(logoUrls[key]);
+  const url=URL.createObjectURL(f),img=new Image();
+  img.onload=()=>{logos[key]=img;box.replaceChildren(img);refreshStill();};
+  img.onerror=()=>setStatus('Impossible de lire ce logo. Essaie une autre image.');
+  logoUrls[key]=url;img.src=url;
+ });
 }
+readLogo($('homeLogo'),'home',$('homeCrest'));readLogo($('awayLogo'),'away',$('awayCrest'));
+function getPreds(){return [...document.querySelectorAll('.prediction')].map(r=>({name:r.querySelector('.ai-name').value.trim()||'AI',h:Math.max(0,Math.min(20,parseInt(r.querySelector('.score-home').value,10)||0)),a:Math.max(0,Math.min(20,parseInt(r.querySelector('.score-away').value,10)||0))}));}
+function compute(){
+ const p=getPreds(),counts={};p.forEach(x=>{const k=x.h+'-'+x.a;counts[k]=(counts[k]||0)+1;});
+ const sorted=Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],undefined,{numeric:true}));
+ const [score,count]=sorted[0],[h,a]=score.split('-');
+ $('consensus').textContent=h+' – '+a;$('agreement').textContent=count+'/10';$('agreementBar').style.width=(count*10)+'%';
+ $('distribution').textContent='Répartition : '+sorted.map(([s,n])=>s.replace('-', '–')+' ('+n+')').join(' · ');
+ return {p,h:+h,a:+a,count,counts};
+}
+$('calculate').onclick=()=>{const d=compute();draw(0,d);};
+$('reset').onclick=()=>{
+ document.querySelectorAll('.score-home').forEach((x,i)=>x.value=defaultHome[i]);
+ document.querySelectorAll('.score-away').forEach((x,i)=>x.value=defaultAway[i]);
+ compute();draw(0,compute());setStatus('Pronostics réinitialisés.');
+};
+const c=$('stage'),ctx=c.getContext('2d'),W=c.width,H=c.height;
+const easeOut=t=>1-Math.pow(1-t,3);
+function rounded(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
+function fitText(value,maxWidth,startSize,minSize=24,weight='800'){
+ let size=startSize;do{ctx.font=`${weight} ${size}px Arial`;if(ctx.measureText(value).width<=maxWidth)return size;size-=2;}while(size>minSize);return minSize;
+}
+function drawTeamName(value,x,y,maxWidth,align){
+ const name=(value||'ÉQUIPE').trim().toUpperCase();
+ const words=name.split(/\s+/);let lines=[],line='';
+ words.forEach(word=>{const test=line?line+' '+word:word;ctx.font='800 43px Arial';if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=word;}else line=test;});
+ if(line)lines.push(line);
+ if(lines.length>2)lines=[lines[0],lines.slice(1).join(' ')];
+ lines.forEach((v,i)=>{const size=fitText(v,maxWidth,43,25);text(v,x,y+i*48,size,'#132b1b','900',align);});
+}
+function text(t,x,y,size,color,weight='700',align='center'){ctx.fillStyle=color;ctx.font=`${weight} ${size}px Arial`;ctx.textAlign=align;ctx.textBaseline='alphabetic';ctx.fillText(t,x,y);}
+function draw(t,data){
+ const p=data||compute(),progress=Math.max(0,Math.min(1,t/20)),lime='#c8ff00';
+ const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#eaf6d9');bg.addColorStop(1,'#c9e5b2');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+ // Terrain et lignes du terrain
+ ctx.strokeStyle='#6b9a72';ctx.globalAlpha=.34;ctx.lineWidth=7;ctx.strokeRect(70,90,W-140,H-180);ctx.strokeRect(270,90,W-540,300);ctx.strokeRect(270,H-390,W-540,300);ctx.beginPath();ctx.moveTo(70,H/2);ctx.lineTo(W-70,H/2);ctx.stroke();ctx.beginPath();ctx.arc(W/2,H/2,190,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=1;
+ // En-tête animé
+ const head=easeOut(Math.min(1,t/1.2));ctx.globalAlpha=head;rounded(300,95,480,105,24,'#ffffffdd');text('PLANET PRO',540,166,58,'#102418','900');ctx.globalAlpha=1;
+ text(($('league').value||'FOOTBALL').toUpperCase().slice(0,36),540,285,37,'#425d47','800');
+ text(($('kickoff').value||'MATCH PREDICTION').toUpperCase().slice(0,34),540,335,28,'#526c56','700');
+ // Bloc équipes
+ rounded(75,430,930,300,34,'#ffffffdf');
+ if(logos.home){ctx.drawImage(logos.home,130,475,180,180);}else{rounded(155,485,130,130,65,lime);text(($('home').value||'A').trim().slice(0,2).toUpperCase(),220,568,48,'#102418','900');}
+ if(logos.away){ctx.drawImage(logos.away,770,475,180,180);}else{rounded(795,485,130,130,65,lime);text(($('away').value||'B').trim().slice(0,2).toUpperCase(),860,568,48,'#102418','900');}
+ drawTeamName($('home').value,335,555,300,'center');
+ drawTeamName($('away').value,745,555,300,'center');
+ text('VS',540,615,35,'#67806a','900');
+ // Score central avec révélation
+ const reveal=easeOut(Math.max(0,Math.min(1,(t-2)/2.5)));ctx.save();ctx.translate(540,920);ctx.scale(.88+.12*reveal,.88+.12*reveal);ctx.globalAlpha=reveal;rounded(-300,-105,600,230,42,lime);text(p.h+' – '+p.a,0,75,150,'#07150c','900');ctx.restore();ctx.globalAlpha=1;
+ text('SCORE MAJORITAIRE',540,1105,39,'#31533a','900');
+ // Cartes de pronostics : révélation en cascade
+ const visible=Math.min(10,Math.floor(Math.max(0,t-5)/.85)+1),startY=1190;
+ p.p.forEach((v,i)=>{
+  const col=i%5,row=Math.floor(i/5),x=90+col*184,y=startY+row*210,shown=i<visible;
+  const local=shown?easeOut(Math.min(1,(t-(5+i*.85))/.45)):0;
+  ctx.save();ctx.globalAlpha=.16+.84*local;ctx.translate(x+78,y+72+(1-local)*30);
+  rounded(-78,-72,156,145,20,'#fafff2');rounded(-43,-57,86,52,13,lime);
+  text(String(i+1),0,-20,29,'#102418','900');text(v.h+'–'+v.a,0,28,39,'#132b1b','900');
+  const nm=(v.name||'AI').slice(0,13);text(nm,0,58,18,'#526c56','700');ctx.restore();
+ });
+ // Compteur et progression
+ rounded(220,1690,640,100,24,'#ffffffdd');text(Math.min(10,visible)+'/10 · PRÉDICTIONS',540,1755,43,'#142d1c','900');
+ rounded(180,1830,720,16,8,'#93b58d');rounded(180,1830,720*progress,16,8,lime);
+ text('PLANET PRO · ANALYSE DES PRONOSTICS',540,1890,22,'#365a3d','700');
+}
+function refreshStill(){draw(0,compute());}
 function setStatus(s){$('status').textContent=s;}
-function stopAnim(){if(animFrame)cancelAnimationFrame(animFrame);animFrame=null;}
-function animatePreview(){stopAnim();const d=compute(),start=performance.now(),duration=20000;function frame(now){const t=Math.min(20,(now-start)/1000);draw(t,d);if(t<20)animFrame=requestAnimationFrame(frame);else setStatus('Prévisualisation terminée.');}animFrame=requestAnimationFrame(frame);setStatus('Prévisualisation en cours…');}
+function stopAnim(){if(animFrame){cancelAnimationFrame(animFrame);animFrame=null;}}
+function animatePreview(){
+ if(recording)return;stopAnim();const d=compute(),start=performance.now(),duration=20000;
+ function frame(now){const t=Math.min(20,(now-start)/1000);draw(t,d);if(t<20)animFrame=requestAnimationFrame(frame);else{animFrame=null;setStatus('Prévisualisation terminée.');}}
+ animFrame=requestAnimationFrame(frame);setStatus('Prévisualisation en cours…');
+}
 $('preview').onclick=animatePreview;
 $('export').onclick=async()=>{
- if(recording)return;const d=compute();if(!c.captureStream||!window.MediaRecorder){setStatus('Ce navigateur ne prend pas en charge l’enregistrement vidéo. Essaie Chrome à jour.');return;}
- stopAnim();const stream=c.captureStream(30);let mime='';for(const m of ['video/mp4;codecs=h264','video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm']){if(MediaRecorder.isTypeSupported(m)){mime=m;break;}}
- if(!mime){setStatus('Aucun format vidéo compatible détecté sur ce navigateur.');return;}
- let rec;try{rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:6000000});}catch(e){setStatus('Impossible de démarrer l’export : '+e.message);return;}
- const chunks=[];rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data);};
- rec.onerror=e=>{recording=false;setStatus('Erreur pendant l’enregistrement.');};
- rec.onstop=()=>{const blob=new Blob(chunks,{type:mime});const ext=mime.includes('mp4')?'mp4':'webm';const url=URL.createObjectURL(blob);const a=$('download');a.href=url;a.download='PLANET-PRO-'+($('home').value||'HOME')+'-vs-'+($('away').value||'AWAY')+'.'+ext;a.textContent='⬇ Télécharger la vidéo ('+ext.toUpperCase()+', '+(blob.size/1024/1024).toFixed(1)+' Mo)';a.style.display='inline-block';recording=false;setStatus('Vidéo prête ! Appuie sur « Télécharger la vidéo ».');stream.getTracks().forEach(x=>x.stop());};
- recording=true;$('download').style.display='none';setStatus('Génération de la vidéo… Ne quitte pas cette page (0–20 s).');rec.start(250);const start=performance.now();function frame(now){const t=Math.min(20,(now-start)/1000);draw(t,d);if(t<20)requestAnimationFrame(frame);else setTimeout(()=>rec.stop(),350);}requestAnimationFrame(frame);
+ if(recording)return;
+ const d=compute();
+ if(!c.captureStream||!window.MediaRecorder){setStatus('Enregistrement non pris en charge. Essaie Chrome à jour sur Android.');return;}
+ stopAnim();
+ const stream=c.captureStream(30);
+ const candidates=['video/mp4;codecs=avc1.42E01E','video/mp4','video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'];
+ const mime=candidates.find(m=>MediaRecorder.isTypeSupported(m));
+ if(!mime){stream.getTracks().forEach(x=>x.stop());setStatus('Aucun format vidéo compatible détecté sur ce navigateur.');return;}
+ let rec;
+ try{rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:10000000});}
+ catch(e){stream.getTracks().forEach(x=>x.stop());setStatus('Impossible de démarrer l’export : '+e.message);return;}
+ const chunks=[];
+ rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data);};
+ rec.onerror=()=>{recording=false;stream.getTracks().forEach(x=>x.stop());setStatus('Erreur pendant l’enregistrement. Réessaie.');};
+ rec.onstop=()=>{
+  const actualType=rec.mimeType||mime,ext=actualType.includes('mp4')?'mp4':'webm';
+  const blob=new Blob(chunks,{type:actualType}),url=URL.createObjectURL(blob),a=$('download');
+  if(a.dataset.url)URL.revokeObjectURL(a.dataset.url);
+  a.dataset.url=url;a.href=url;
+  const safe=s=>(s||'EQUIPE').trim().replace(/[^a-z0-9_-]+/gi,'-').replace(/^-|-$/g,'').slice(0,30)||'EQUIPE';
+  a.download='PLANET-PRO-'+safe($('home').value)+'-vs-'+safe($('away').value)+'.'+ext;
+  a.textContent='⬇ Télécharger la vidéo ('+ext.toUpperCase()+', '+(blob.size/1024/1024).toFixed(1)+' Mo)';
+  a.style.display='inline-block';recording=false;stream.getTracks().forEach(x=>x.stop());
+  setStatus('Vidéo prête ! Format réel : '+ext.toUpperCase()+'. Appuie sur « Télécharger la vidéo ».');
+ };
+ recording=true;$('export').disabled=true;$('preview').disabled=true;$('download').style.display='none';
+ setStatus('Génération de la vidéo en cours… Garde cette page ouverte pendant environ 20 secondes.');
+ try{
+  rec.start(250);const start=performance.now();
+  const frame=now=>{const t=Math.min(20,(now-start)/1000);draw(t,d);if(t<20)requestAnimationFrame(frame);else setTimeout(()=>{if(rec.state==='recording')rec.stop();},500);};
+  requestAnimationFrame(frame);
+ }catch(e){recording=false;$('export').disabled=false;$('preview').disabled=false;stream.getTracks().forEach(x=>x.stop());setStatus('Erreur au lancement : '+e.message);}
+ const restore=()=>{$('export').disabled=false;$('preview').disabled=false;};
+ rec.addEventListener('stop',restore,{once:true});
 };
-document.querySelectorAll('.prediction input').forEach(el=>el.addEventListener('change',compute));
-['league','kickoff','home','away'].forEach(id=>$(id).addEventListener('input',()=>draw(0,compute())));
+document.querySelectorAll('.prediction input').forEach(el=>el.addEventListener('change',()=>{const d=compute();draw(0,d);}));
+['league','kickoff','home','away'].forEach(id=>$(id).addEventListener('input',refreshStill));
 compute();draw(0,compute());
-if('serviceWorker' in navigator && location.protocol.startsWith('http')){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script>
 </body>
 </html>
